@@ -17,4 +17,10 @@ The html body should be sth like:
 ```
 TODO list:
 -------
-* something here
+selection query
+join query
+division query
+aggregation query
+nested aggregation with group by
+delete operation
+update operation
