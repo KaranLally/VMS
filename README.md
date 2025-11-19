@@ -26,3 +26,4 @@ aggregation query
 nested aggregation with group by
 delete operation
 update operation
+test
