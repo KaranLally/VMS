@@ -13,8 +13,10 @@ The html body should be sth like:
                 
             </div>
         </div>
-  </body>
+</body>
 ```
+Call `sideBarShow()` to insert sidebar html code
+
 TODO list:
 -------
 * something here
