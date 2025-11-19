@@ -3,6 +3,7 @@ Bootstrap link:
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 
 The html body should be sth like:
+
 <body>
         <div class="d-flex">
             <?= sidebarShow("/*currentTab*/"); ?>
