@@ -3,7 +3,7 @@ Bootstrap link:
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 
 The html body should be sth like:
-
+```sh
 <body>
         <div class="d-flex">
             <?= sidebarShow("/*currentTab*/"); ?>
@@ -14,4 +14,4 @@ The html body should be sth like:
             </div>
         </div>
   </body>
-
+```
