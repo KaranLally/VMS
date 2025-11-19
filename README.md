@@ -19,4 +19,10 @@ Call `sideBarShow()` to insert sidebar html code
 
 TODO list:
 -------
-* something here
+selection query
+join query
+division query
+aggregation query
+nested aggregation with group by
+delete operation
+update operation
