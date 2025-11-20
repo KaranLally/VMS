@@ -36,7 +36,7 @@ TODO list:
 This function makes a new ID depending on role.
 
 ### How to use:
-```
+```php
 $newId = autoCreatedNewId("host");
 ```
 
@@ -54,7 +54,7 @@ $newId = autoCreatedNewId("host");
 
 Before saving password to database, hash it:
 
-```
+```php
 $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 ```
 
@@ -62,7 +62,7 @@ This keeps real password safe.
 
 To check password during login:
 
-```
+```php
 password_verify($inputPassword, $hashFromDB);
 ```
 
@@ -72,7 +72,7 @@ password_verify($inputPassword, $hashFromDB);
 
 Full example of how sign-up works:
 
-```
+```php
 $newId = autoCreatedNewId('host');
 $hashedPass = password_hash($_POST['signUpPassword'], PASSWORD_DEFAULT);
 
@@ -93,7 +93,7 @@ $stmt->execute();
 
 Checking user login:
 
-```
+```php
 $sql = "SELECT * FROM host WHERE host_id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':id', $id);
@@ -111,13 +111,13 @@ if (password_verify($inputPassword, $data["password"])) {
 
 Add at the top of any PHP file that needs these functions:
 
-```
+```php
 require_once "functionSet.php";
 ```
 
 Then you can call:
 
-```
+```php
 autoCreatedNewId("guest");
 getNextEvent($pdo, $userId);
 ```
