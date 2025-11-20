@@ -44,7 +44,7 @@ if (!isset($_SESSION['host_id'])) {
                                         echo 'No event';
                                     }else{
                                         foreach($eventlist as $info) {
-                                            echo $info.": ".$nextE ."<br>";
+                                            echo $info.": ".$nextE[$info] ."<br>";
                                         }
                                     }
                                 ?>
