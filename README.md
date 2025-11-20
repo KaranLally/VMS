@@ -28,7 +28,6 @@ TODO list:
 - [ ] nested aggregation with group by
 - [ ] delete operation
 - [ ] update operation
-- [x] Log in and Sign up function
 
 # More update
 
