@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2025 at 04:24 AM
+-- Generation Time: Nov 20, 2025 at 01:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -144,19 +144,21 @@ INSERT INTO `events` (`event_id`, `time`, `date`, `event_type`) VALUES
 
 CREATE TABLE `guest` (
   `guest_id` int(11) NOT NULL,
-  `event_title` varchar(100) DEFAULT NULL
+  `event_title` varchar(100) DEFAULT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `guest`
 --
 
-INSERT INTO `guest` (`guest_id`, `event_title`) VALUES
-(601, 'Rock Night'),
-(602, 'Tech Summit'),
-(603, 'Wedding'),
-(604, 'Wedding'),
-(605, 'Charity Gala');
+INSERT INTO `guest` (`guest_id`, `event_title`, `password`) VALUES
+(601, 'Rock Night', '$2y$10$7KuZIAB8jCvo7OBB.f7tcuvTGTDy87MXGMnzSeGA71qsmvaw07AFe'),
+(602, 'Tech Summit', '$2y$10$fNVuMDS5wmjdtERv0LX/L.O7g3vobJIpMzW4cu9D6bdthcVs..7Py'),
+(603, 'Wedding', '$2y$10$q5AG25UZ4CUL3w5qFRUsPuQJDbLAm73cwpy58o9uoQ989ycFmziBu'),
+(604, 'Wedding', '$2y$10$4eDCwYXaazlIs4W1sH7YsOGG5HBs9Ni/.l9pFhy2BkoqGViHScIAG'),
+(605, 'Charity Gala', '$2y$10$spS1q1JAzZlXzxBwnpkUWebxnIQvfDMCyRvghdyGvGXX01.en5xGG'),
+(606, NULL, '$2y$10$NiVibtFXS4f4Kzf9v.hT4.ztwGggMNdzxeG1uV5mgidcg/G3Au5wO');
 
 -- --------------------------------------------------------
 
@@ -167,19 +169,21 @@ INSERT INTO `guest` (`guest_id`, `event_title`) VALUES
 CREATE TABLE `host` (
   `host_id` int(11) NOT NULL,
   `host_address` varchar(100) DEFAULT NULL,
-  `host_phone_num` varchar(15) DEFAULT NULL
+  `host_phone_num` varchar(15) DEFAULT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `host`
 --
 
-INSERT INTO `host` (`host_id`, `host_address`, `host_phone_num`) VALUES
-(101, '123 Main St, Vancouver', '604-555-1001'),
-(102, '456 Oak Ave, Burnaby', '604-555-1002'),
-(103, '789 Pine Rd, Richmond', '604-555-1003'),
-(104, '321 Cedar Blvd, Surrey', '604-555-1004'),
-(105, '654 Maple Ln, Coquitlam', '604-555-1005');
+INSERT INTO `host` (`host_id`, `host_address`, `host_phone_num`, `password`) VALUES
+(101, '123 Main St, Vancouver', '604-555-1001', '$2y$10$9avKNhGCUTbbKypQ1929y.Xnsn4gCbpSa8grxQ5OO9DCZxtwpBUYq'),
+(102, '456 Oak Ave, Burnaby', '604-555-1002', '$2y$10$.PPDLmCCP2PXqYh7RJlftuKE8O3eNhkXG47bvwJNbrVL.LNFbDE0i'),
+(103, '789 Pine Rd, Richmond', '604-555-1003', '$2y$10$pW4PJRdGQqZ3r67mLpP70utx1H8Oj5iqTRAZQovBrh9IzGXty0qNa'),
+(104, '321 Cedar Blvd, Surrey', '604-555-1004', '$2y$10$CmKnjLemXArMwIsMVoYBIeXhUwgqOSHn/87sNVozqv2cetrnboAT6'),
+(105, '654 Maple Ln, Coquitlam', '604-555-1005', '$2y$10$j8xyz6mjVZftyaBEkQJWHO3SEW41g8xNOiasTi955JMamPoDErWQu'),
+(106, '1111 Main St TEST', '111-111-1111', '$2y$10$NRAYkXT2Ovz9uo3uyBXT2.kdeVP.qYcu3oXWaICz7TAhSULJ9QRfW');
 
 -- --------------------------------------------------------
 
