@@ -17,6 +17,8 @@ The html body should be sth like:
 ```
 Call `sideBarShow()` to insert sidebar html code
 
+It'd be good to leave some comments after changing the code
+
 TODO list:
 -------
 selection query
