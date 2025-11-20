@@ -27,7 +27,7 @@ if (!isset($_SESSION['host_id']) && !isset($_SESSION['guest_id'])) {
             <?= sidebarShow("findEvent"); ?>
             <!--Main div==============================================================================-->
             <div class="container-fluid content flex-grow-1 p-5">
-                <h2>404</h2>
+                <h2>404 findEvent</h2>
             </div>
         </div>
         

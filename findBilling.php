@@ -20,14 +20,14 @@ if (!isset($_SESSION['host_id']) && !isset($_SESSION['guest_id'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    </head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         
-    <title>Find Order</title>
+    <title>Billing Page</title>
 </head>
 <body>
         <div class="d-flex">
-            <?= sidebarShow("findOrder"); ?>
+            <?= sidebarShow("findBilling"); ?>
             <!--Main div==============================================================================-->
             <div class="container-fluid content flex-grow-1 p-5">
-                <h2>404 findOrder</h2>
+                <h2>404 findBilling</h2>
             </div>
         </div>
         

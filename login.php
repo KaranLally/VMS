@@ -32,14 +32,16 @@ if ($user_id < 600) {
     //for host page not admin
     $_SESSION['host_id'] = $user_id;
     //go to Dashboard page
-    header("Location: Dashboard.php");
+    header("Location: Dashboard_host.php");
     exit();
+
 }elseif ($user_id == 9000){
     // 9000 admin ID
     $_SESSION['role'] = "admin";
     //jump to admin page
-    header("Location: admin.html");
+    header("Location: Admin_eventM.php");
     exit();
+
 } else {
     // 600+ guest
     $userQuery = $pdo->query("SELECT * FROM guest WHERE guest_id = $user_id");
@@ -53,7 +55,7 @@ if ($user_id < 600) {
 
     $_SESSION['role'] = "guest";
     $_SESSION['guest_id'] = $user_id;
-    header("Location: Dashboard.php");
+    header("Location: Dashboard_guest.php");
     exit();
 }
 ?>
