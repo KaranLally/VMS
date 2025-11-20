@@ -29,7 +29,8 @@ TODO list:
 - [ ] delete operation
 - [ ] update operation
 
-***More update***
+#More update
+
 ## 1. autoCreatedNewId($role)
 
 This function makes a new ID depending on role.
