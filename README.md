@@ -58,8 +58,6 @@ Before saving password to database, hash it:
 $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 ```
 
-This keeps real password safe.
-
 To check password during login:
 
 ```php
@@ -126,10 +124,8 @@ getNextEvent($pdo, $userId);
 
 ## Notes
 
-- Admin ID does not use auto-increment.
 - Host IDs must remain under 600.
 - Guest IDs must remain 600 or above.
 - Always hash passwords; never store plain text.
-- Do not copy someone else’s bcrypt hash, it will not work.
 
 ---
