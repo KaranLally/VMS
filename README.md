@@ -21,10 +21,10 @@ It'd be good to leave some comments after changing the code
 
 TODO list:
 -------
-selection query
-join query
-division query
-aggregation query
-nested aggregation with group by
-delete operation
-update operation
+*selection query
+*join query
+*division query
+*aggregation query
+*nested aggregation with group by
+*delete operation
+*update operation
