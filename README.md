@@ -17,7 +17,7 @@ The html body should be sth like:
 ```
 Call `sideBarShow()` to insert sidebar html code
 
-**It'd be good to leave some comments after changing the code**
+**password = 000+host_id/guest_id, e.g. host_id:101 password: 000101**
 
 TODO list:
 -------
