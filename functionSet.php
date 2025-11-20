@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 try {
     $connString = "mysql:host=localhost;dbname=venue_managment_database";
     $user = "root";
@@ -92,7 +97,7 @@ echo <<<HTML
                         </a> 
 
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow"> 
-                            <li><a class="dropdown-item" href="#">Settings</a></li> 
+                            <li><a class="dropdown-item" href="hashCodeGenerator.php">dev tools</a></li> 
                             <li><hr class="dropdown-divider"></li> 
                             <li><a class="dropdown-item" href="login.html">Sign out</a></li> 
                         </ul> 
@@ -171,7 +176,29 @@ function getNextEvent($pdo, $id){
         $statement = $pdo->prepare($sql);
         $statement->bindParam(':target',$id);
         $statement->execute();
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        $ReturnArray = $statement->fetch(PDO::FETCH_ASSOC);
+
+        if(!$ReturnArray){
+            return null;
+        }
+
+        return $ReturnArray;
+    }
+}
+
+
+//@para $role: host or guest
+function autoCreatedNewId($role){
+    global $pdo;
+
+    if($role == 'host'){
+        $findLastIdStmt = $pdo->query("SELECT MAX(host_id) AS maxid FROM host WHERE host_id < 600");
+        $lastIdRow = $findLastIdStmt->fetch();
+        return $lastIdRow["maxid"]+1;
+    }else{
+        $findLastIdStmt = $pdo->query("SELECT MAX(guest_id) AS maxid FROM guest WHERE guest_id >= 600");
+        $lastIdRow = $findLastIdStmt->fetch();
+        return $lastIdRow["maxid"]+1;
     }
 }
 

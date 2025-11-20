@@ -19,7 +19,8 @@ if (!isset($_SESSION['host_id'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    </head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
     <title>Dashboard_host</title>
 </head>
 
@@ -38,8 +39,13 @@ if (!isset($_SESSION['host_id'])) {
                         <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1">Your Next Event:
                             <span class="d-block small opacity-50">
                                 <?php 
-                                    foreach($eventlist as $info) {
-                                        echo $info.": ".getNextEvent($pdo,$_SESSION['host_id'])[$info] ."<br>";
+                                    $nextE = getNextEvent($pdo,$_SESSION['host_id']);
+                                    if($nextE==null){
+                                        echo 'No event';
+                                    }else{
+                                        foreach($eventlist as $info) {
+                                            echo $info.": ".$nextE ."<br>";
+                                        }
                                     }
                                 ?>
                             </span> 
