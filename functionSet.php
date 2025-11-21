@@ -199,6 +199,61 @@ function autoCreatedNewId($role){
     }
 }
 
+function searchEvents($pdo,$type){
+    if(isset($_SESSION['role']) && $_SESSION['role'] === 'host'){
+        $sql = "
+            SELECT *
+            FROM events e, hosts_event h, host a
+            WHERE event_type LIKE :type AND a.host_id = h.host_id AND h.event_id = e.event_id
+        ";
+    }
+    else{
+        $sql = "
+            SELECT *
+            FROM events
+            WHERE event_type LIKE :type
+    ";
+    }
+    $statement = $pdo->prepare($sql);
+    $eventtype = "$type%";
+    $statement->bindParam(':type',$eventtype);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function updateEvent($pdo, $event_id, $date, $time, $event_type){
+    $sql = "
+        UPDATE events
+        SET date = :date, time = :time, event_type = :event_type
+        WHERE event_id = :id
+    ";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':event_type',$event_type);
+    $statement->bindParam(':time',$time);
+    $statement->bindParam(':date',$date);
+    $statement->bindParam(':id',$event_id);
+    return $statement->execute();
+}
+
+function deleteEvent($pdo, $event_id){
+    $sql = "
+        DELETE
+        FROM events
+        WHERE event_id = :id
+    ";
+    $statement = $pdo->prepare($sql);
+    return $statement->execute();
+}
+
+function displayEvent($pdo, $event_id){
+    $sql = "
+        SELECT * FROM events WHERE event_id = :id
+    ";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':id',$event_id);
+    $statement->execute();
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
 
 
 ?>
