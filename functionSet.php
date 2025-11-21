@@ -261,5 +261,19 @@ function displayEvent($pdo, $event_id){
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
+function getHostsEvents($pdo, $host_id){
+    $sql = "
+        SELECT e.*
+        FROM hosts_event h
+        JOIN events e ON h.event_id = e.event_id
+        JOIN host a ON h.host_id = a.host_id
+        WHERE a.host_id = :host_id
+    ";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':host_id', $host_id, PDO::PARAM_INT);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 ?>
