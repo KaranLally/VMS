@@ -33,6 +33,7 @@ $event = displayEvent($pdo, $event_id);
             <!--Main div==============================================================================-->
             <div class="container-fluid content flex-grow-1 p-5">
                 <h2>Manage Event id: <?php echo $event_id;?></h2>
+                <br>
                 <form method = "POST">
                     <input type = "hidden" name="event_id" value="<?php echo $event_id?>"/>
 
@@ -50,12 +51,30 @@ $event = displayEvent($pdo, $event_id);
                             header("Location: hostEvents.php");
                         }
                     ?>
-                    <input type="date" name="date" value="<?php echo $event['date']?>"/><br><br>
-                    <input type="time" name="time" value="<?php echo $event['time']?>"/><br><br>
-                    <input type="text" name="event_type" value="<?php echo $event['event_type']?>"/><br><br>
+                    <div class="mb-3">
+                    <label class="form-label">Date: </label>
+                    <input type="date" name="date" value="<?php echo $event['date']?>"/>
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label">Time: </label>
+                    <input type="time" name="time" value="<?php echo $event['time']?>"/>
+                    </div>
 
                     <button type= "submit" name= "update">Update Event </button><br><br><br>
                     <button type= "submit" name= "delete">Delete Event </button>
+                    <div class="mb-3">
+                    <label class="form-label">Type: </label>
+                    <input type="text" name="event_type" value="<?php echo $event['event_type']?>"/><br><br>
+                    </div>
+                    
+                    <div class="gap-2">
+                    <button class="btn btn-primary" type= "submit" name= "update">Update Event </button>
+                    </div>
+                        <br>
+                    <div class="gap-2">
+                    <button class="btn btn-danger" type= "submit" name= "update">Delete  Event </button>
+                    </div>
                 </form>
             </div>
         </div>
