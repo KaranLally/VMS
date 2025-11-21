@@ -44,7 +44,7 @@ $results = getHostsEvents($pdo,$_SESSION['host_id']);
                           <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'host'): ?>
                               <form method="POST" action="manageEvent.php">
                                     <input type="hidden" name="event_id" value="<?= $event['event_id'] ?>">
-                                    <button type="submit" name="manage">Manage Event</button>
+                                    <button class="btn btn-dark" type="submit" name="manage">Manage Event</button>
                               </form>
                            <?php endif; ?>
                     <?php endforeach; ?>
