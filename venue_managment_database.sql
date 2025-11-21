@@ -480,7 +480,7 @@ ALTER TABLE `works`
 -- Constraints for table `attends`
 --
 ALTER TABLE `attends`
-  ADD CONSTRAINT `attends_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`),
+  ADD CONSTRAINT `attends_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `attends_ibfk_2` FOREIGN KEY (`guest_id`) REFERENCES `guest` (`guest_id`);
 
 --
@@ -506,14 +506,14 @@ ALTER TABLE `emergency_contact`
 -- Constraints for table `hosts_event`
 --
 ALTER TABLE `hosts_event`
-  ADD CONSTRAINT `hosts_event_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`),
+  ADD CONSTRAINT `hosts_event_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `hosts_event_ibfk_2` FOREIGN KEY (`host_id`) REFERENCES `host` (`host_id`);
 
 --
 -- Constraints for table `located`
 --
 ALTER TABLE `located`
-  ADD CONSTRAINT `located_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`),
+  ADD CONSTRAINT `located_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `located_ibfk_2` FOREIGN KEY (`venue_id`) REFERENCES `venue` (`venue_id`);
 
 --
@@ -527,13 +527,13 @@ ALTER TABLE `supervisor`
 -- Constraints for table `ticket`
 --
 ALTER TABLE `ticket`
-  ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`);
+  ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `works`
 --
 ALTER TABLE `works`
-  ADD CONSTRAINT `works_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`),
+  ADD CONSTRAINT `works_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `works_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
 COMMIT;
 
