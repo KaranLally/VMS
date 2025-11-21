@@ -47,6 +47,7 @@ $event = displayEvent($pdo, $event_id);
 
                         if(isset($_POST['delete'])){
                             deleteEvent($pdo, $event_id);
+                            header("Location: hostEvents.php");
                         }
                     ?>
                     <input type="date" name="date" value="<?php echo $event['date']?>"/><br><br>
