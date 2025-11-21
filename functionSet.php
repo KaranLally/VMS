@@ -43,7 +43,7 @@ echo <<<HTML
                     <ul class="nav nav-pills flex-column mb-auto"> 
                         <li class="nav-item"><a href="Dashboard_host.php" class="nav-link <?= $dB ?>" aria-current="page">Dashboard</a></li> 
                         <li><a href="findEvent.php" class="nav-link <?= $fE ?>e">Find Event</a></li> 
-                        <li><a href="findBilling.php" class="nav-link <?= $bl ?>">Billing</a></li> 
+                        <li><a href="findBilling.php" class="nav-link <?= $bl ?>">Billing details</a></li> 
                     </ul> 
                     <hr> 
                     <div class="dropdown"> 
