@@ -26,8 +26,8 @@ TODO list:
 - [ ] division query
 - [ ] aggregation query
 - [ ] nested aggregation with group by
-- [ ] delete operation
-- [ ] update operation
+- [v] delete operation
+- [v] update operation
 
 # More update
 
