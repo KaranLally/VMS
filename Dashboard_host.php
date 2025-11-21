@@ -41,7 +41,7 @@ if (!isset($_SESSION['host_id'])) {
                                 <?php 
                                     $nextE = getNextEvent($pdo,$_SESSION['host_id']);
                                     if($nextE==null){
-                                        echo 'No event';
+                                        echo 'No Upcoming event';
                                     }else{
                                         foreach($eventlist as $info) {
                                             echo $info.": ".$nextE[$info] ."<br>";
