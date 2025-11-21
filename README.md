@@ -21,8 +21,8 @@ Call `sideBarShow()` to insert sidebar html code
 
 TODO list:
 -------
-- [ ] selection query
-- [ ] join query
+- [V] selection query
+- [V] join query
 - [ ] division query
 - [ ] aggregation query
 - [ ] nested aggregation with group by
