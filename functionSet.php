@@ -126,9 +126,7 @@ echo <<<HTML
                     <hr> 
                     <ul class="nav nav-pills flex-column mb-auto"> 
                         <li class="nav-item"><a href="Dashboard_guest.php" class="nav-link <?= $dB ?>" aria-current="page">Dashboard</a></li> 
-                        <li><a href="findEvent.php" class="nav-link <?= $fE ?>e">Find Event</a></li> 
-                        <li><a href="findOrder.php" class="nav-link <?= $fO ?>">Find my Order</a></li> 
-                        <li><a href="findBilling.php" class="nav-link <?= $bl ?>">Find my Billing</a></li> 
+                        <li><a href="findEvent.php" class="nav-link <?= $fE ?>e">Find Event</a></li>
                     </ul> 
                     <hr> 
                     <div class="dropdown"> 
