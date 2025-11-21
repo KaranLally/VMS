@@ -9,39 +9,43 @@ if (trim($_SESSION['role'])!='admin') {
     header("Location: login.html");
     exit();
 }
+
+// Query all guests
+$sql = "SELECT guest_id, event_title FROM guest ORDER BY guest_id ASC";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$guestResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    </head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
-    
     <title>Customer Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<body>
+<div class="d-flex">
+    <?= sidebarShow("customer"); ?>
+    <div class="container-fluid content flex-grow-1 p-5">
+        <h2>Guest Management</h2><br>
 
-    <body>
-        <div class="d-flex">
-            <?= sidebarShow("customer"); ?>
-            <!--Main div==============================================================================-->
-            <div class="container-fluid content flex-grow-1 p-5">
-                <!--<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"></div>-->
-                <h2>Admin_customer 404</h2>
-                
+       <?php
+foreach ($guestResults as $row) {
+    echo "<div class='list-group mb-3'>";
+    echo "<div class='list-group-item'><b>Guest ID:</b> " 
+        . htmlspecialchars($row['guest_id'] ?? '') . "</div>";
 
+    // handle null event_title
+    $eventTitle = $row['event_title'] ?? 'No event assigned';
+    echo "<div class='list-group-item'><b>Event Title:</b> " 
+        . htmlspecialchars($eventTitle) . "</div>";
 
-                
-                    
-                
+    echo "</div>";
+}
+?>
 
-
-            </div>
-        </div>
-        
-
-    </body>
+    </div>
+</div>
+</body>
 </html>
