@@ -148,7 +148,7 @@ HTML;
 }
 
 function getNextEvent($pdo, $id){
-    if($id<600){
+    if(intval($id)<600){
         $sql = "
             SELECT events.event_id, events.time, events.date, events.event_type
             FROM `hosts_event`
