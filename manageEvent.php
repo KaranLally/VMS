@@ -55,7 +55,7 @@ $event = displayEvent($pdo, $event_id);
                     <input type="text" name="event_type" value="<?php echo $event['event_type']?>"/><br><br>
 
                     <button type= "submit" name= "update">Update Event </button><br><br><br>
-                    <button type= "submit" name= "update">Delete Event </button>
+                    <button type= "submit" name= "delete">Delete Event </button>
                 </form>
             </div>
         </div>
