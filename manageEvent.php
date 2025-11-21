@@ -44,6 +44,7 @@ $event = displayEvent($pdo, $event_id);
                             $event_type = $_POST['event_type'];
                             updateEvent($pdo, $event_id, $date, $time, $event_type);
                             $event = displayEvent($pdo, $event_id); // Update the changed values
+                            echo '<script>alert("Event updated!");</script>';
                         }
 
                         if(isset($_POST['delete'])){
